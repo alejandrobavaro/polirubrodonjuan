@@ -1,0 +1,700 @@
+/* ========================================================= */
+/* _OfertasDonJuan.scss - OFERTAS PLAYA & SOL */
+/* MISMA LÍNEA QUE ALMACÉN, JUGUETERÍA, LIBRERÍA */
+/* ========================================================= */
+
+/* TIPOGRAFÍAS */
+:root {
+  --font-titulos: 'Clash Display', sans-serif;
+  --font-textos: 'Satoshi', sans-serif;
+}
+
+.ofertas-playa {
+  width: 100%;
+  font-family: var(--font-textos);
+  background: #F4F7F9;
+  min-height: 100vh;
+}
+
+/* =========================================================
+   ANIMACIONES
+   ========================================================= */
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.animate-slideUp {
+  opacity: 0;
+  animation: slideUp 0.6s ease forwards;
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* =========================================================
+   HEADER DE CATEGORÍA (IGUAL QUE EN ALMACÉN)
+   ========================================================= */
+.categoria-header {
+  text-align: center;
+  padding: 30px 15px 20px;
+  
+  .header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 215, 0, 0.1);
+    padding: 6px 20px;
+    border-radius: 40px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    
+    .badge-icono {
+      color: #FFD700;
+      font-size: 1rem;
+    }
+    
+    span {
+      font-weight: 500;
+      color: #1E4B6E;
+      font-size: 0.8rem;
+      letter-spacing: 0.5px;
+    }
+  }
+  
+  h1 {
+    font-family: var(--font-titulos);
+    font-size: 2rem;
+    color: #1E4B6E;
+    margin-bottom: 8px;
+    
+    @media (min-width: 768px) {
+      font-size: 2.5rem;
+    }
+    
+    .destacado {
+      color: #FF6F61;
+    }
+  }
+  
+  p {
+    color: #1E4B6E;
+    opacity: 0.6;
+    font-size: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+/* =========================================================
+   CONTADOR PLAYERO
+   ========================================================= */
+.countdown-playa {
+  padding: 0 15px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  
+  .countdown-contenido {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+    border: 1px solid rgba(255, 111, 97, 0.1);
+    text-align: center;
+  }
+  
+  .countdown-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    color: #1E4B6E;
+    font-size: 0.9rem;
+    
+    .label-icono {
+      color: #FFD700;
+    }
+  }
+  
+  .countdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    
+    @media (min-width: 480px) {
+      gap: 8px;
+    }
+    
+    .countdown-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 45px;
+      
+      @media (min-width: 480px) {
+        min-width: 55px;
+      }
+      
+      .countdown-numero {
+        font-family: var(--font-titulos);
+        font-size: 1.8rem;
+        line-height: 1;
+        background: #F4F7F9;
+        padding: 5px;
+        border-radius: 8px;
+        width: 100%;
+        color: #FF6F61;
+        
+        @media (min-width: 480px) {
+          font-size: 2.2rem;
+          padding: 8px;
+        }
+      }
+      
+      .countdown-etiqueta {
+        font-size: 0.6rem;
+        margin-top: 3px;
+        color: #1E4B6E;
+        opacity: 0.6;
+      }
+    }
+    
+    .countdown-separador {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #FFD700;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+/* =========================================================
+   FILTROS (IGUAL QUE EN ALMACÉN)
+   ========================================================= */
+.filtros-playa {
+  padding: 15px;
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+  
+  .filtros-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .filtro-btn {
+    padding: 8px 15px;
+    border: 1px solid #FF6F61;
+    background: transparent;
+    color: #FF6F61;
+    border-radius: 40px;
+    font-weight: 500;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    
+    &:hover {
+      background: #FF6F61;
+      color: white;
+    }
+    
+    &.active {
+      background: #FF6F61;
+      color: white;
+      
+      svg {
+        color: #FFD700;
+      }
+    }
+    
+    svg {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+/* =========================================================
+   GRID DE OFERTAS (IGUAL QUE EN ALMACÉN)
+   ========================================================= */
+.ofertas-grid-section {
+  padding: 30px 15px;
+  max-width: 1200px;
+  margin: 0 auto;
+  
+  .ofertas-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    
+    @media (min-width: 600px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .oferta-card-playa {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.02);
+    position: relative;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 111, 97, 0.1);
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(255, 111, 97, 0.1);
+      border-color: rgba(255, 215, 0, 0.3);
+    }
+    
+    &.destacada {
+      border: 2px solid #FFD700;
+    }
+    
+    .oferta-flash {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #FFD700;
+      color: #1E4B6E;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      z-index: 3;
+      animation: pulse 2s infinite;
+    }
+    
+    .oferta-imagen {
+      height: 160px;
+      position: relative;
+      overflow: hidden;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+      
+      &:hover img {
+        transform: scale(1.1);
+      }
+      
+      .oferta-tag {
+        position: absolute;
+        bottom: 8px;
+        left: 8px;
+        background: #1E4B6E;
+        color: white;
+        padding: 4px 12px;
+        border-radius: 30px;
+        font-size: 0.7rem;
+        font-weight: 500;
+      }
+    }
+    
+    .oferta-contenido {
+      padding: 20px;
+      position: relative;
+      
+      .oferta-icono {
+        position: absolute;
+        top: -20px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        background: #FF6F61;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        border: 2px solid #FFD700;
+      }
+      
+      h3 {
+        font-family: var(--font-titulos);
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+        padding-right: 40px;
+        color: #1E4B6E;
+      }
+      
+      p {
+        color: #1E4B6E;
+        opacity: 0.6;
+        font-size: 0.8rem;
+        margin-bottom: 15px;
+        line-height: 1.4;
+      }
+      
+      .oferta-ahorro {
+        background: #FFD700;
+        padding: 6px 10px;
+        border-radius: 8px;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        .ahorro-texto {
+          font-weight: 500;
+          font-size: 0.7rem;
+          color: #1E4B6E;
+        }
+        
+        .ahorro-valor {
+          font-weight: 700;
+          font-size: 1rem;
+          color: #1E4B6E;
+        }
+      }
+      
+      .oferta-precios {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        
+        .precio-regular {
+          font-size: 0.9rem;
+          color: #999;
+          text-decoration: line-through;
+        }
+        
+        .precio-oferta {
+          font-family: var(--font-titulos);
+          font-size: 1.6rem;
+          font-weight: 500;
+          color: #FF6F61;
+        }
+      }
+      
+      .oferta-acciones {
+        display: flex;
+        gap: 8px;
+        
+        .btn-comprar {
+          flex: 2;
+          background: #FF6F61;
+          color: white;
+          border: none;
+          padding: 10px;
+          border-radius: 30px;
+          font-weight: 500;
+          font-size: 0.85rem;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 5px;
+          
+          &:hover {
+            background: #FFD700;
+            color: #1E4B6E;
+          }
+        }
+        
+        .btn-detalles {
+          flex: 1;
+          background: transparent;
+          color: #FF6F61;
+          border: 1px solid #FF6F61;
+          padding: 8px;
+          border-radius: 30px;
+          font-weight: 500;
+          font-size: 0.8rem;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          
+          &:hover {
+            background: #FF6F61;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* =========================================================
+   OFERTA ESPECIAL DESTACADA (ARENA CON DORADO)
+   ========================================================= */
+.oferta-especial-playa {
+  background: linear-gradient(135deg, #F4E6D4 0%, #F4E6D4 100%);
+  padding: 50px 15px;
+  margin: 30px 0;
+  border-top: 2px solid #FFD700;
+  border-bottom: 2px solid #FFD700;
+  
+  .especial-contenido {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .especial-tag {
+    display: inline-block;
+    background: #FF6F61;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+  
+  h2 {
+    font-family: var(--font-titulos);
+    font-size: 2.2rem;
+    color: #1E4B6E;
+    margin-bottom: 10px;
+    
+    @media (min-width: 768px) {
+      font-size: 2.8rem;
+    }
+  }
+  
+  .especial-texto {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #1E4B6E;
+    
+    .especial-destacado {
+      color: #FF6F61;
+      font-size: 1.8rem;
+      display: inline-block;
+    }
+  }
+  
+  .especial-detalle {
+    font-size: 1rem;
+    margin-bottom: 25px;
+    color: #1E4B6E;
+    opacity: 0.6;
+  }
+  
+  .btn-especial {
+    display: inline-block;
+    background: #FF6F61;
+    color: white;
+    padding: 12px 35px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: #FFD700;
+      color: #1E4B6E;
+      transform: scale(1.05);
+    }
+  }
+}
+
+/* =========================================================
+   CÓMO APROVECHAR (IGUAL QUE EN MAYORISTA)
+   ========================================================= */
+.como-aprovechar {
+  padding: 40px 15px;
+  max-width: 1000px;
+  margin: 0 auto;
+  
+  h2 {
+    font-family: var(--font-titulos);
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1E4B6E;
+    
+    @media (min-width: 768px) {
+      font-size: 2.2rem;
+    }
+    
+    .destacado {
+      color: #FF6F61;
+    }
+  }
+  
+  .pasos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  .paso-card {
+    text-align: center;
+    padding: 15px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    border: 1px solid rgba(255, 111, 97, 0.1);
+    
+    .paso-numero {
+      width: 35px;
+      height: 35px;
+      background: #FF6F61;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin: 0 auto 10px;
+    }
+    
+    h4 {
+      font-family: var(--font-titulos);
+      font-size: 0.95rem;
+      margin-bottom: 5px;
+      color: #1E4B6E;
+    }
+    
+    p {
+      color: #1E4B6E;
+      opacity: 0.6;
+      font-size: 0.8rem;
+      line-height: 1.3;
+    }
+  }
+}
+
+/* =========================================================
+   WHATSAPP PLAYERO
+   ========================================================= */
+.whatsapp-playa {
+  background: linear-gradient(135deg, #1E4B6E 0%, #1E4B6E 100%);
+  padding: 50px 15px;
+  
+  .whatsapp-contenido {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+  }
+  
+  .whatsapp-estrellas {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    color: #FFD700;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+  
+  h3 {
+    font-family: var(--font-titulos);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: white;
+    
+    @media (min-width: 768px) {
+      font-size: 1.8rem;
+    }
+  }
+  
+  p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+    opacity: 0.9;
+  }
+  
+  .btn-whatsapp-playa {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #25D366;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: #128C7E;
+      transform: scale(1.05);
+    }
+  }
+}
+
+/* =========================================================
+   RESPONSIVE EXTRA
+   ========================================================= */
+@media (max-width: 480px) {
+  .categoria-header h1 {
+    font-size: 1.6rem;
+  }
+  
+  .countdown .countdown-item {
+    min-width: 35px;
+  }
+  
+  .countdown-numero {
+    font-size: 1.3rem !important;
+  }
+  
+  .filtro-btn {
+    padding: 5px 10px;
+    font-size: 0.7rem;
+  }
+  
+  .oferta-card-playa h3 {
+    font-size: 1rem;
+  }
+  
+  .oferta-precios .precio-oferta {
+    font-size: 1.3rem;
+  }
+}

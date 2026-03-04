@@ -1,0 +1,299 @@
+/* ========================================================= */
+/* _WhatsappIcon.scss - ÍCONO WHATSAPP PLAYA & SOL */
+/* Estilo claro, moderno, veraniego */
+/* ========================================================= */
+
+/* TIPOGRAFÍAS */
+:root {
+  --font-titulos: 'Clash Display', sans-serif;
+  --font-textos: 'Satoshi', sans-serif;
+}
+
+/* =========================================================
+   ANIMACIONES
+   ========================================================= */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+}
+
+/* =========================================================
+   CONTENEDOR PRINCIPAL
+   ========================================================= */
+.whatsapp-flotante-playa {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  
+  @media (min-width: 768px) {
+    bottom: 25px;
+    right: 25px;
+  }
+}
+
+/* =========================================================
+   MENSAJE FLOTANTE
+   ========================================================= */
+.mensaje-flotante {
+  background: white;
+  border-radius: 20px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 5px 20px rgba(255, 111, 97, 0.15);
+  border: 1px solid #FFD700;
+  max-width: 250px;
+  position: relative;
+  
+  &.entrada {
+    animation: slideIn 0.5s ease forwards;
+  }
+  
+  &.salida {
+    animation: slideOut 0.5s ease forwards;
+  }
+  
+  .mensaje-icono {
+    color: #FFD700;
+    font-size: 1.3rem;
+    animation: rotate 6s linear infinite;
+  }
+  
+  .mensaje-texto {
+    font-family: var(--font-textos);
+    color: #1E4B6E;
+    font-size: 0.85rem;
+    
+    strong {
+      color: #FF6F61;
+    }
+  }
+  
+  .mensaje-cerrar {
+    background: transparent;
+    border: none;
+    color: #999;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0 5px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      color: #FF6F61;
+      transform: scale(1.2);
+    }
+  }
+}
+
+/* =========================================================
+   BOTÓN PRINCIPAL DE WHATSAPP
+   ========================================================= */
+.whatsapp-boton {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  border: 3px solid white;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s ease;
+  animation: float 3s ease-in-out infinite;
+  
+  @media (min-width: 768px) {
+    width: 70px;
+    height: 70px;
+  }
+  
+  @media (min-width: 992px) {
+    width: 80px;
+    height: 80px;
+  }
+  
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+    
+    .whatsapp-texto {
+      opacity: 1;
+      transform: translateX(-70px);
+    }
+  }
+  
+  .whatsapp-icono {
+    color: white;
+    font-size: 2rem;
+    
+    @media (min-width: 768px) {
+      font-size: 2.2rem;
+    }
+    
+    @media (min-width: 992px) {
+      font-size: 2.5rem;
+    }
+  }
+  
+  .whatsapp-sol {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    color: #FFD700;
+    font-size: 1.2rem;
+    background: white;
+    border-radius: 50%;
+    padding: 2px;
+    animation: rotate 8s linear infinite;
+    
+    @media (min-width: 768px) {
+      font-size: 1.4rem;
+      top: -8px;
+      right: -8px;
+    }
+  }
+  
+  .whatsapp-texto {
+    position: absolute;
+    right: 70px;
+    background: #1E4B6E;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-family: var(--font-titulos);
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(0);
+    transition: all 0.3s ease;
+    pointer-events: none;
+    border: 1px solid #FFD700;
+    
+    @media (max-width: 768px) {
+      display: none;
+    }
+    
+    &::after {
+      content: '';
+      position: absolute;
+      right: -5px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 10px;
+      height: 10px;
+      background: #1E4B6E;
+      border-right: 1px solid #FFD700;
+      border-top: 1px solid #FFD700;
+      transform: rotate(45deg);
+      margin-top: -5px;
+    }
+  }
+}
+
+/* =========================================================
+   VERSIÓN ALTERNATIVA CON IMAGEN (si prefieren usar logo)
+   ========================================================= */
+.whatsapp-boton-imagen {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  animation: float 3s ease-in-out infinite;
+  
+  @media (min-width: 768px) {
+    width: 70px;
+    height: 70px;
+  }
+  
+  @media (min-width: 992px) {
+    width: 80px;
+    height: 80px;
+  }
+  
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+  }
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE EXTRA
+   ========================================================= */
+@media (max-width: 480px) {
+  .whatsapp-flotante-playa {
+    bottom: 15px;
+    right: 15px;
+  }
+  
+  .mensaje-flotante {
+    max-width: 200px;
+    padding: 8px 12px;
+    
+    .mensaje-texto {
+      font-size: 0.75rem;
+    }
+  }
+  
+  .whatsapp-boton {
+    width: 50px;
+    height: 50px;
+    
+    .whatsapp-icono {
+      font-size: 1.8rem;
+    }
+    
+    .whatsapp-sol {
+      font-size: 1rem;
+    }
+  }
+}

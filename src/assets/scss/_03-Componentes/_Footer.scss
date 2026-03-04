@@ -1,0 +1,366 @@
+/* ========================================================= */
+/* _Footer.scss - FOOTER CLARO CON SLIDER */
+/* Fondo claro, slider de banners, estilo moderno */
+/* ========================================================= */
+
+/* TIPOGRAFÍAS */
+:root {
+  --font-titulos: 'Clash Display', sans-serif;
+  --font-textos: 'Satoshi', sans-serif;
+}
+
+/* =========================================================
+   FOOTER PRINCIPAL - FONDO CLARO
+   ========================================================= */
+.footer-claro {
+  width: 100%;
+  font-family: var(--font-textos);
+  background: #F4F7F9; /* Fondo muy claro */
+  padding: 30px 15px 15px;
+  color: #1E4B6E;
+  position: relative;
+  border-top: 2px solid #FFD700;
+  
+  @media (min-width: 768px) {
+    padding: 40px 20px 20px;
+  }
+}
+
+/* =========================================================
+   SLIDER DE BANNERS
+   ========================================================= */
+.banner-slider-container {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  padding: 0 10px;
+  
+  .slick-dots {
+    bottom: -30px;
+    
+    li button:before {
+      color: #FF6F61;
+      opacity: 0.3;
+    }
+    
+    li.slick-active button:before {
+      color: #FFD700;
+      opacity: 1;
+    }
+  }
+  
+  .slick-prev, .slick-next {
+    z-index: 10;
+    
+    &:before {
+      color: #FF6F61;
+      opacity: 0.5;
+      font-size: 24px;
+    }
+    
+    &:hover:before {
+      opacity: 1;
+      color: #FFD700;
+    }
+  }
+  
+  .slick-prev {
+    left: 5px;
+  }
+  
+  .slick-next {
+    right: 5px;
+  }
+}
+
+.banner-item {
+  padding: 0 8px;
+  
+  .banner-imagen {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(72, 201, 176, 0.2);
+    
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 20px rgba(255, 215, 0, 0.15);
+      border-color: rgba(255, 215, 0, 0.3);
+    }
+  }
+}
+
+/* =========================================================
+   GRID DE 3 COLUMNAS
+   ========================================================= */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto 30px;
+  
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (min-width: 992px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+}
+
+/* =========================================================
+   COLUMNAS
+   ========================================================= */
+.footer-col {
+  h3 {
+    font-family: var(--font-titulos);
+    font-size: 1rem;
+    font-weight: 500;
+    color: #FF6F61;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #FFD700;
+    padding-bottom: 5px;
+    display: inline-block;
+  }
+}
+
+/* =========================================================
+   COLUMNA 1 - LOGO
+   ========================================================= */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  
+  .logo-sol {
+    .sol-icono {
+      font-size: 2rem;
+      color: #FFD700;
+      animation: rotar 8s linear infinite;
+    }
+  }
+  
+  .logo-texto {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+  
+  .logo-don {
+    font-family: var(--font-titulos);
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: #1E4B6E;
+    letter-spacing: 0.5px;
+  }
+  
+  .logo-juan {
+    font-family: var(--font-titulos);
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #FF6F61;
+    letter-spacing: 0.5px;
+    margin-top: -3px;
+  }
+}
+
+.footer-desc {
+  color: #1E4B6E;
+  line-height: 1.5;
+  margin-bottom: 0;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* =========================================================
+   COLUMNA 2 - ENLACES
+   ========================================================= */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+  li {
+    margin-bottom: 10px;
+    
+    a {
+      color: #001c31;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      font-size: 0.85rem;
+      display: inline-block;
+      opacity: 0.7;
+      
+      &:hover {
+        opacity: 1;
+        color: #FF6F61;
+        transform: translateX(3px);
+      }
+    }
+  }
+}
+
+/* =========================================================
+   COLUMNA 3 - CONTACTO
+   ========================================================= */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  
+  .contact-icono {
+    font-size: 1rem;
+    color: #8f7c13;
+    min-width: 20px;
+  }
+  
+  a, span {
+    color: #000000;
+    text-decoration: none;
+    font-size: 0.85rem;
+    opacity: 0.7;
+    
+    &:hover {
+      opacity: 1;
+      color: #FF6F61;
+    }
+  }
+}
+
+/* =========================================================
+   BANNER DE ENVÍOS - SUTIL
+   ========================================================= */
+.envio-banner {
+  background: #F4E6D4;
+  padding: 10px 15px;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+  border: 1px solid #FFD700;
+  
+  .envio-icono {
+    font-size: 1.1rem;
+    color: #FF6F61;
+  }
+  
+  span {
+    font-weight: 500;
+    color: #1E4B6E;
+    font-size: 0.8rem;
+    text-align: center;
+    letter-spacing: 0.3px;
+  }
+}
+
+/* =========================================================
+   BOTTOM - REDES Y COPYRIGHT
+   ========================================================= */
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 215, 0, 0.2);
+  
+  @media (min-width: 600px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .redes-sociales {
+    display: flex;
+    gap: 15px;
+    
+    .red-social {
+      width: 36px;
+      height: 36px;
+      background: transparent;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #1E4B6E;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+      border: 1px solid #FFD700;
+      opacity: 0.6;
+      
+      &:hover {
+        opacity: 1;
+        color: #FF6F61;
+        border-color: #FF6F61;
+        transform: translateY(-2px);
+      }
+    }
+  }
+  
+  .copyright {
+    color: #1E4B6E;
+    font-size: 0.7rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    opacity: 0.6;
+    
+    .separador {
+      color: #FFD700;
+    }
+    
+    @media (max-width: 480px) {
+      flex-direction: column;
+      gap: 3px;
+      text-align: center;
+    }
+  }
+}
+
+/* =========================================================
+   ANIMACIONES
+   ========================================================= */
+@keyframes rotar {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* =========================================================
+   RESPONSIVE EXTRA
+   ========================================================= */
+@media (max-width: 600px) {
+  .footer-col {
+    text-align: center;
+    
+    h3 {
+      display: block;
+      text-align: center;
+    }
+  }
+  
+  .footer-logo {
+    justify-content: center;
+  }
+  
+  .contact-item {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-don, .logo-juan {
+    font-size: 1.3rem;
+  }
+  
+  .footer-claro {
+    padding: 20px 10px 10px;
+  }
+}

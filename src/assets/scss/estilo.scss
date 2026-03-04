@@ -1,0 +1,26 @@
+// =========================================================
+// ESTILOS GENERALES
+// =========================================================
+@import "./_01-General/App";
+
+// =========================================================
+// COMPONENTES ESTRUCTURALES
+// =========================================================
+@import "./_03-Componentes/Header";
+@import "./_03-Componentes/Footer";
+@import "./_03-Componentes/WhatsappIcon";
+@import "./_03-Componentes/MainSliderFotos";
+
+// =========================================================
+// COMPONENTES DE TEQUEÑOS PIRULA
+// =========================================================
+@import './_03-Componentes/HomeTequenos';
+@import './_03-Componentes/PromosTequenos';
+@import './_03-Componentes/TiendaTequenos';
+@import './_03-Componentes/ContactoTequenos';
+@import './_03-Componentes/SomosPirulaTequenos';
+@import './_03-Componentes/PedidosTequenos';
+@import './_03-Componentes/RegalosTequenos';
+@import './_03-Componentes/ReservaTuMesa';
+@import './_03-Componentes/ContadorDiasPirula';
+@import './_03-Componentes/UbicacionTequenosPirula';

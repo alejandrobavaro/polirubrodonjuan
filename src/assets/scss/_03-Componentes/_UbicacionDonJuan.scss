@@ -1,0 +1,498 @@
+/* ========================================================= */
+/* _UbicacionDonJuan.scss - UBICACIÓN PLAYA & SOL */
+/* MISMA LÍNEA QUE ALMACÉN, JUGUETERÍA, LIBRERÍA */
+/* ========================================================= */
+
+/* TIPOGRAFÍAS */
+:root {
+  --font-titulos: 'Clash Display', sans-serif;
+  --font-textos: 'Satoshi', sans-serif;
+}
+
+.ubicacion-playa {
+  width: 100%;
+  font-family: var(--font-textos);
+  background: #F4F7F9;
+  overflow-x: hidden;
+}
+
+/* =========================================================
+   ANIMACIONES
+   ========================================================= */
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.animate-slideUp {
+  opacity: 0;
+  animation: slideUp 0.6s ease forwards;
+}
+
+.animate-bounce {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* =========================================================
+   HEADER DE CATEGORÍA (IGUAL QUE EN ALMACÉN)
+   ========================================================= */
+.categoria-header {
+  text-align: center;
+  padding: 30px 15px 20px;
+  
+  .header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 215, 0, 0.1);
+    padding: 6px 20px;
+    border-radius: 40px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    
+    .badge-icono {
+      color: #FFD700;
+      font-size: 1rem;
+    }
+    
+    span {
+      font-weight: 500;
+      color: #1E4B6E;
+      font-size: 0.8rem;
+      letter-spacing: 0.5px;
+    }
+  }
+  
+  h1 {
+    font-family: var(--font-titulos);
+    font-size: 2rem;
+    color: #1E4B6E;
+    margin-bottom: 8px;
+    
+    @media (min-width: 768px) {
+      font-size: 2.5rem;
+    }
+    
+    .destacado {
+      color: #FF6F61;
+    }
+  }
+  
+  p {
+    color: #1E4B6E;
+    opacity: 0.6;
+    font-size: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+/* =========================================================
+   DECORACIÓN PLAYERA
+   ========================================================= */
+.ubicacion-decoration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+  
+  .deco-line {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #FFD700, transparent);
+    
+    @media (min-width: 768px) {
+      width: 100px;
+    }
+  }
+  
+  .deco-icono {
+    font-size: 2rem;
+    color: #FF6F61;
+  }
+}
+
+/* =========================================================
+   TARJETA DE UBICACIÓN
+   ========================================================= */
+.ubicacion-card-playa {
+  max-width: 800px;
+  margin: 30px auto;
+  background: white;
+  border-radius: 20px;
+  padding: 40px 20px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.02);
+  border: 1px solid rgba(255, 111, 97, 0.1);
+  text-align: center;
+  
+  @media (min-width: 768px) {
+    padding: 50px 30px;
+    margin: 40px auto;
+  }
+  
+  .direccion-principal {
+    margin-bottom: 25px;
+    
+    .location-icono {
+      font-size: 2.5rem;
+      color: #FFD700;
+      margin-bottom: 15px;
+      
+      @media (min-width: 768px) {
+        font-size: 3rem;
+      }
+    }
+    
+    h2 {
+      font-family: var(--font-titulos);
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: #1E4B6E;
+      
+      @media (min-width: 768px) {
+        font-size: 2rem;
+      }
+      
+      .destacado {
+        color: #FF6F61;
+      }
+    }
+    
+    .direccion {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #1E4B6E;
+      margin-bottom: 5px;
+      
+      @media (min-width: 768px) {
+        font-size: 1.3rem;
+      }
+    }
+    
+    .ciudad {
+      color: #1E4B6E;
+      opacity: 0.6;
+      font-size: 0.95rem;
+      
+      @media (min-width: 768px) {
+        font-size: 1rem;
+      }
+    }
+  }
+  
+  .acciones-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    
+    @media (max-width: 600px) {
+      flex-direction: column;
+    }
+    
+    .btn-accion {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      
+      @media (min-width: 768px) {
+        padding: 12px 25px;
+        font-size: 1rem;
+      }
+      
+      &.whatsapp {
+        background: #25D366;
+        color: white;
+        
+        &:hover {
+          background: #128C7E;
+          transform: translateY(-2px);
+        }
+      }
+      
+      &.maps {
+        background: #FF6F61;
+        color: white;
+        
+        &:hover {
+          background: #FFD700;
+          color: #1E4B6E;
+          transform: translateY(-2px);
+        }
+      }
+      
+      &.compartir {
+        background: #FFD700;
+        color: #1E4B6E;
+        
+        &:hover {
+          background: #FF6F61;
+          color: white;
+          transform: translateY(-2px);
+        }
+      }
+    }
+  }
+}
+
+/* =========================================================
+   MAPA
+   ========================================================= */
+.mapa-section-playa {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 0 15px;
+  
+  @media (min-width: 768px) {
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  
+  .mapa-container {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(255, 111, 97, 0.1);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    
+    iframe {
+      display: block;
+    }
+  }
+}
+
+/* =========================================================
+   HORARIOS
+   ========================================================= */
+.horarios-section-playa {
+  max-width: 600px;
+  margin: 30px auto;
+  text-align: center;
+  padding: 0 15px;
+  
+  @media (min-width: 768px) {
+    margin: 40px auto;
+  }
+  
+  h3 {
+    font-family: var(--font-titulos);
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    color: #1E4B6E;
+    
+    @media (min-width: 768px) {
+      font-size: 1.8rem;
+    }
+    
+    .destacado {
+      color: #FF6F61;
+    }
+  }
+  
+  .horarios-grid-playa {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.02);
+    border: 1px solid rgba(255, 111, 97, 0.1);
+    
+    .horario-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+      
+      @media (max-width: 480px) {
+        flex-direction: column;
+        gap: 5px;
+      }
+      
+      &:last-child {
+        border-bottom: none;
+      }
+      
+      .dia {
+        font-weight: 500;
+        color: #1E4B6E;
+      }
+      
+      .hora {
+        color: #FF6F61;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+/* =========================================================
+   DELIVERY INFO
+   ========================================================= */
+.delivery-info-playa {
+  max-width: 600px;
+  margin: 30px auto;
+  background: linear-gradient(135deg, #1E4B6E 0%, #1E4B6E 100%);
+  border-radius: 20px;
+  padding: 30px 20px;
+  text-align: center;
+  color: white;
+  
+  @media (min-width: 768px) {
+    padding: 40px 30px;
+    margin: 40px auto;
+  }
+  
+  .delivery-icono {
+    font-size: 2.5rem;
+    color: #FFD700;
+    margin-bottom: 15px;
+    animation: float 3s ease-in-out infinite;
+    
+    @media (min-width: 768px) {
+      font-size: 3rem;
+    }
+  }
+  
+  h3 {
+    font-family: var(--font-titulos);
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    
+    @media (min-width: 768px) {
+      font-size: 1.5rem;
+    }
+  }
+  
+  p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    opacity: 0.9;
+    
+    @media (min-width: 768px) {
+      font-size: 1.1rem;
+    }
+  }
+  
+  .btn-delivery {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #FFD700;
+    color: #1E4B6E;
+    padding: 10px 30px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    
+    @media (min-width: 768px) {
+      padding: 12px 40px;
+      font-size: 1rem;
+    }
+    
+    &:hover {
+      background: #FF6F61;
+      color: white;
+      transform: scale(1.05);
+    }
+  }
+}
+
+/* =========================================================
+   PROMO BANNER - ARENA CON DORADO
+   ========================================================= */
+.promo-banner-playa {
+  max-width: 800px;
+  margin: 30px auto 50px;
+  background: linear-gradient(135deg, #F4E6D4 0%, #F4E6D4 100%);
+  border-radius: 50px;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  border: 1px solid #FFD700;
+  
+  @media (min-width: 768px) {
+    padding: 20px 30px;
+    margin: 40px auto 60px;
+    gap: 15px;
+  }
+  
+  .banner-icono {
+    font-size: 1.3rem;
+    color: #FF6F61;
+    
+    @media (min-width: 768px) {
+      font-size: 1.5rem;
+    }
+  }
+  
+  p {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1E4B6E;
+    margin: 0;
+    text-align: center;
+    
+    @media (min-width: 768px) {
+      font-size: 1rem;
+    }
+    
+    .promo-destacado {
+      color: #FF6F61;
+      font-weight: 700;
+    }
+  }
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 480px) {
+  .categoria-header h1 {
+    font-size: 1.6rem;
+  }
+  
+  .direccion {
+    font-size: 1rem !important;
+  }
+  
+  .acciones-container .btn-accion {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .ubicacion-card-playa {
+    padding: 30px 15px;
+  }
+}

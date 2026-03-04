@@ -1,0 +1,478 @@
+/* ========================================================= */
+/* _App.scss - ESTILOS GLOBALES - VERSIÓN FUSIÓN */
+/* Playa + Sol + Tipografía moderna */
+/* ========================================================= */
+
+/* TIPOGRAFÍAS GLOBALES */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
+
+/* =========================================================
+   ANIMACIONES
+   ========================================================= */
+@keyframes flotar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes brillar {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.2); }
+}
+
+/* =========================================================
+   RESET Y CONFIGURACIÓN BASE
+   ========================================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  scroll-behavior: smooth;
+  font-size: 14px;
+}
+
+body {
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  color: #1E4B6E;
+  line-height: 1.5;
+  background: #F4E6D4;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* =========================================================
+   DECORACIONES
+   ========================================================= */
+.pelotas-decorativas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.pelota {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.1;
+  
+  &::before {
+    content: '☀️';
+  }
+}
+
+.pelota-1 { top: 5%; left: 2%; animation: flotar 4s infinite; }
+.pelota-2 { top: 15%; right: 3%; animation: flotar 5s infinite; }
+.pelota-3 { bottom: 10%; left: 5%; animation: flotar 6s infinite; }
+.pelota-4 { top: 40%; right: 8%; animation: flotar 4.5s infinite; }
+.pelota-5 { bottom: 25%; right: 15%; animation: flotar 5.5s infinite; }
+.pelota-6 { top: 70%; left: 10%; animation: flotar 7s infinite; }
+
+.pelota-cayendo {
+  position: absolute;
+  font-size: 1.5rem;
+  opacity: 0.1;
+  
+  &::before {
+    content: '⭐';
+  }
+}
+
+.pelota-cayendo-1 { top: 20%; left: 30%; animation: brillar 2s infinite; }
+.pelota-cayendo-2 { top: 50%; right: 20%; animation: brillar 3s infinite; }
+.pelota-cayendo-3 { bottom: 30%; left: 60%; animation: brillar 2.5s infinite; }
+
+/* =========================================================
+   CONTENEDOR PRINCIPAL
+   ========================================================= */
+.app-container {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 0 40px rgba(255, 215, 0, 0.1);
+}
+
+.main-content {
+  flex: 1;
+  padding: 25px;
+  
+  @media (min-width: 768px) { padding: 30px; }
+  @media (min-width: 992px) { padding: 35px; }
+}
+
+/* =========================================================
+   TIPOGRAFÍA MODERNA
+   ========================================================= */
+h1, h2, h3 {
+  font-family: 'Bebas Neue', cursive;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #1E4B6E;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 2.8rem;
+  color: #FF6F61;
+  
+  @media (min-width: 768px) { font-size: 3.5rem; }
+  @media (min-width: 992px) { font-size: 4rem; }
+}
+
+h2 {
+  font-size: 2.2rem;
+  color: #48C9B0;
+  
+  @media (min-width: 768px) { font-size: 2.8rem; }
+}
+
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #1E4B6E;
+}
+
+h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #FF6F61;
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 0.9rem;
+  color: #1E4B6E;
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
+}
+
+/* =========================================================
+   BOTONES MODERNOS
+   ========================================================= */
+.btn-primario, .btn-secundario, .btn-outline {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 12px 28px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 40px;
+}
+
+.btn-primario {
+  background: #FF6F61;
+  color: white;
+  
+  &:hover {
+    background: #48C9B0;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 0 #1E4B6E;
+  }
+}
+
+.btn-secundario {
+  background: #6DD5FA;
+  color: #1E4B6E;
+  
+  &:hover {
+    background: #FFD700;
+  }
+}
+
+.btn-outline {
+  background: transparent;
+  color: #FF6F61;
+  border: 2px solid #FF6F61;
+  
+  &:hover {
+    background: #FF6F61;
+    color: white;
+  }
+}
+
+/* =========================================================
+   CARDS MODERNAS
+   ========================================================= */
+.card-producto {
+  background: white;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  border: 2px solid #48C9B0;
+  border-radius: 20px;
+  height: 100%;
+  position: relative;
+  
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(255, 111, 97, 0.2);
+    border-color: #FFD700;
+  }
+  
+  .card-imagen {
+    height: 150px;
+    background: linear-gradient(135deg, #6DD5FA, #48C9B0);
+    position: relative;
+    overflow: hidden;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    &:hover img {
+      transform: scale(1.1);
+    }
+  }
+  
+  .card-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #FFD700;
+    color: #1E4B6E;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.65rem;
+    padding: 5px 15px;
+    border-radius: 30px;
+    z-index: 2;
+    letter-spacing: 0.5px;
+  }
+  
+  .card-contenido {
+    padding: 15px;
+    
+    h3 {
+      font-size: 1.1rem;
+      margin-bottom: 3px;
+      color: #1E4B6E;
+    }
+    
+    .card-categoria {
+      color: #48C9B0;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+    
+    p {
+      font-size: 0.75rem;
+      margin-bottom: 10px;
+      opacity: 0.7;
+    }
+    
+    .precio {
+      font-size: 1.5rem;
+      font-family: 'Bebas Neue', cursive;
+      font-weight: 400;
+      color: #FF6F61;
+      line-height: 1;
+      
+      small {
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.7rem;
+        font-weight: 300;
+        color: #999;
+      }
+    }
+    
+    .precio-anterior {
+      font-size: 0.8rem;
+      color: #999;
+      text-decoration: line-through;
+      margin-left: 5px;
+    }
+  }
+}
+
+/* =========================================================
+   GRID COMPACTO
+   ========================================================= */
+.compact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  
+  @media (min-width: 480px) { grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (min-width: 768px) { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  @media (min-width: 992px) { grid-template-columns: repeat(5, 1fr); gap: 22px; }
+  @media (min-width: 1200px) { grid-template-columns: repeat(6, 1fr); gap: 25px; }
+}
+
+/* =========================================================
+   CATEGORÍAS CHIP
+   ========================================================= */
+.categoria-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  background: #FFFFFF;
+  color: #1E4B6E;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border-radius: 40px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  border: 2px solid #6DD5FA;
+  
+  &:hover {
+    background: #6DD5FA;
+    transform: translateY(-2px);
+  }
+  
+  &.active {
+    background: #FF6F61;
+    color: white;
+    border-color: #FFD700;
+    
+    svg { color: #FFD700; }
+  }
+  
+  svg {
+    font-size: 1rem;
+    color: #FF6F61;
+  }
+}
+
+/* =========================================================
+   SECCIONES
+   ========================================================= */
+.section-header {
+  text-align: center;
+  margin-bottom: 30px;
+  
+  &::before {
+    content: '☀️ ⭐ ☀️';
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+  }
+  
+  h2 {
+    display: inline-block;
+    background: white;
+    padding: 0 25px;
+    font-size: 2.2rem;
+  }
+  
+  p {
+    font-size: 0.95rem;
+    color: #48C9B0;
+    max-width: 500px;
+    margin: 10px auto 0;
+  }
+}
+
+/* =========================================================
+   DIVISORES
+   ========================================================= */
+hr {
+  margin: 15px 0;
+  border: none;
+  height: 3px;
+  background: linear-gradient(90deg, #6DD5FA, #FFD700, #FF6F61, #48C9B0);
+  border-radius: 3px;
+}
+
+.divider-donjuan {
+  width: 80px;
+  height: 3px;
+  background: #FFD700;
+  margin: 15px auto;
+  border-radius: 3px;
+  position: relative;
+  
+  &::before, &::after {
+    content: '☀️';
+    position: absolute;
+    top: -10px;
+    font-size: 1rem;
+  }
+  
+  &::before { left: -25px; }
+  &::after { right: -25px; }
+}
+
+/* =========================================================
+   UTILIDADES
+   ========================================================= */
+.texto-celeste { color: #6DD5FA; }
+.texto-arena { color: #F4E6D4; }
+.texto-coral { color: #FF6F61; }
+.texto-turquesa { color: #48C9B0; }
+.texto-azul { color: #1E4B6E; }
+.texto-dorado { color: #FFD700; }
+.bg-celeste { background: #6DD5FA; }
+.bg-arena { background: #F4E6D4; }
+.bg-coral { background: #FF6F61; }
+.bg-turquesa { background: #48C9B0; }
+.bg-azul { background: #1E4B6E; }
+.bg-dorado { background: #FFD700; }
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F4E6D4;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #48C9B0;
+  border-radius: 4px;
+  border: 2px solid #FFD700;
+  
+  &:hover { background: #FF6F61; }
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 768px) {
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.8rem; }
+  
+  .section-header {
+    &::before { font-size: 1.2rem; }
+    h2 { font-size: 1.8rem; }
+  }
+}
+
+@media (max-width: 480px) {
+  .categoria-chip {
+    padding: 6px 15px;
+    font-size: 0.7rem;
+  }
+}
